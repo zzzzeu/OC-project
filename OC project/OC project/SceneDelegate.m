@@ -7,6 +7,7 @@
 //
 
 #import "SceneDelegate.h"
+#import "ViewController.h"
 
 @interface SceneDelegate ()
 
@@ -16,9 +17,32 @@
 
 
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
-    // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-    // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-    // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        UITabBarController *tabbarController = [[UITabBarController alloc] init];
+        
+        ViewController *viewController = [[ViewController alloc] init];
+        
+        UINavigationController *navigationConroller = [[UINavigationController alloc] initWithRootViewController:viewController];
+        
+    //    UIViewController *controller1 = [[UIViewController alloc] init];
+    //    controller1.view.backgroundColor = [UIColor redColor];
+        navigationConroller.tabBarItem.title = @"新闻";
+        
+        UIViewController *controller2 = [[UIViewController alloc] init];
+        controller2.view.backgroundColor = [UIColor yellowColor];
+        controller2.tabBarItem.title = @"视频";
+        
+        UIViewController *controller3 = [[UIViewController alloc] init];
+        controller3.view.backgroundColor = [UIColor greenColor];
+        controller3.tabBarItem.title = @"推荐";
+        
+        UIViewController *controller4 = [[UIViewController alloc] init];
+        controller4.view.backgroundColor = [UIColor lightGrayColor];
+        controller4.tabBarItem.title = @"我的";
+        
+        [tabbarController setViewControllers:@[navigationConroller,controller2,controller3,controller4]];
+        
+        self.window.rootViewController = tabbarController;
+        [self.window makeKeyAndVisible];
 }
 
 
