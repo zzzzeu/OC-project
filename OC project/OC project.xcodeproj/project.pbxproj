@@ -16,6 +16,7 @@
 		D47CE19725655D18009C3842 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D47CE19625655D18009C3842 /* main.m */; };
 		D47CE1A125655D18009C3842 /* OC_projectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D47CE1A025655D18009C3842 /* OC_projectTests.m */; };
 		D47CE1AC25655D18009C3842 /* OC_projectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D47CE1AB25655D18009C3842 /* OC_projectUITests.m */; };
+		D47CE1BB25C0363C009C3842 /* GTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47CE1BA25C0363C009C3842 /* GTVideoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		D47CE1A725655D18009C3842 /* OC projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OC projectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D47CE1AB25655D18009C3842 /* OC_projectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OC_projectUITests.m; sourceTree = "<group>"; };
 		D47CE1AD25655D18009C3842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D47CE1B925C0363C009C3842 /* GTVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoViewController.h; sourceTree = "<group>"; };
+		D47CE1BA25C0363C009C3842 /* GTVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				D47CE18825655D17009C3842 /* SceneDelegate.m */,
 				D47CE18A25655D17009C3842 /* ViewController.h */,
 				D47CE18B25655D17009C3842 /* ViewController.m */,
+				D47CE1B925C0363C009C3842 /* GTVideoViewController.h */,
+				D47CE1BA25C0363C009C3842 /* GTVideoViewController.m */,
 				D47CE18D25655D17009C3842 /* Main.storyboard */,
 				D47CE19025655D18009C3842 /* Assets.xcassets */,
 				D47CE19225655D18009C3842 /* LaunchScreen.storyboard */,
@@ -268,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D47CE18C25655D17009C3842 /* ViewController.m in Sources */,
+				D47CE1BB25C0363C009C3842 /* GTVideoViewController.m in Sources */,
 				D47CE18625655D17009C3842 /* AppDelegate.m in Sources */,
 				D47CE19725655D18009C3842 /* main.m in Sources */,
 				D47CE18925655D17009C3842 /* SceneDelegate.m in Sources */,

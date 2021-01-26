@@ -8,8 +8,9 @@
 
 #import "SceneDelegate.h"
 #import "ViewController.h"
+#import "GTVideoViewController.h"
 
-@interface SceneDelegate ()
+@interface SceneDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -17,34 +18,39 @@
 
 
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
-        UITabBarController *tabbarController = [[UITabBarController alloc] init];
+    UITabBarController *tabbarController = [[UITabBarController alloc] init];
         
-        ViewController *viewController = [[ViewController alloc] init];
+    ViewController *viewController = [[ViewController alloc] init];
         
-        UINavigationController *navigationConroller = [[UINavigationController alloc] initWithRootViewController:viewController];
+    UINavigationController *navigationConroller = [[UINavigationController alloc] initWithRootViewController:tabbarController];
         
-    //    UIViewController *controller1 = [[UIViewController alloc] init];
-    //    controller1.view.backgroundColor = [UIColor redColor];
-        navigationConroller.tabBarItem.title = @"新闻";
+//  UIViewController *controller1 = [[UIViewController alloc] init];
+//  controller1.view.backgroundColor = [UIColor redColor];
+    viewController.tabBarItem.title = @"新闻";
+//  controller.tabBarItem.image = [UIImage imageNamed:@""]
+//  controller.tabBarItem.selectedImage = [UIImage imageNamed:@""]
         
-        UIViewController *controller2 = [[UIViewController alloc] init];
-        controller2.view.backgroundColor = [UIColor yellowColor];
-        controller2.tabBarItem.title = @"视频";
+    GTVideoViewController *videoController = [[GTVideoViewController alloc] init];
         
-        UIViewController *controller3 = [[UIViewController alloc] init];
-        controller3.view.backgroundColor = [UIColor greenColor];
-        controller3.tabBarItem.title = @"推荐";
+    UIViewController *controller3 = [[UIViewController alloc] init];
+    controller3.view.backgroundColor = [UIColor greenColor];
+    controller3.tabBarItem.title = @"推荐";
         
-        UIViewController *controller4 = [[UIViewController alloc] init];
-        controller4.view.backgroundColor = [UIColor lightGrayColor];
-        controller4.tabBarItem.title = @"我的";
+    UIViewController *controller4 = [[UIViewController alloc] init];
+    controller4.view.backgroundColor = [UIColor lightGrayColor];
+    controller4.tabBarItem.title = @"我的";
         
-        [tabbarController setViewControllers:@[navigationConroller,controller2,controller3,controller4]];
+    [tabbarController setViewControllers:@[viewController,videoController,controller3,controller4]];
         
-        self.window.rootViewController = tabbarController;
-        [self.window makeKeyAndVisible];
+    tabbarController.delegate = self;
+    
+    self.window.rootViewController = navigationConroller;
+    [self.window makeKeyAndVisible];
 }
 
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    NSLog(@"did select");
+}
 
 - (void)sceneDidDisconnect:(UIScene *)scene {
     // Called as the scene is being released by the system.
