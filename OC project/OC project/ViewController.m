@@ -7,38 +7,39 @@
 //
 
 #import "ViewController.h"
+#import "GTNormalTableViewCell.h"
 
-@interface TestView: UIView
-
-@end
-
-@implementation TestView
-
-- (instancetype)init{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
-
-- (void)willMoveToSuperview:(nullable UIView *)newSuperview{
-    [super willMoveToSuperview:newSuperview];
-}
-
--(void)didMoveToSuperview{
-    [super didMoveToSuperview];
-}
-
--(void)willMoveToWindow:(nullable UIWindow *)newWindow{
-    [super willMoveToWindow:newWindow];
-}
-
--(void)didMoveToWindow{
-    [super didMoveToWindow];
-}
-
-@end
+//@interface TestView: UIView
+//
+//@end
+//
+//@implementation TestView
+//
+//- (instancetype)init{
+//    self = [super init];
+//    if (self) {
+//
+//    }
+//    return self;
+//}
+//
+//- (void)willMoveToSuperview:(nullable UIView *)newSuperview{
+//    [super willMoveToSuperview:newSuperview];
+//}
+//
+//-(void)didMoveToSuperview{
+//    [super didMoveToSuperview];
+//}
+//
+//-(void)willMoveToWindow:(nullable UIWindow *)newWindow{
+//    [super willMoveToWindow:newWindow];
+//}
+//
+//-(void)didMoveToWindow{
+//    [super didMoveToWindow];
+//}
+//
+//@end
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -54,18 +55,18 @@
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-}
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-}
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-}
-- (void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-}
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//}
+//- (void)viewDidAppear:(BOOL)animated{
+//    [super viewDidAppear:animated];
+//}
+//- (void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//}
+//- (void)viewDidDisappear:(BOOL)animated{
+//    [super viewDidDisappear:animated];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -102,13 +103,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    GTNormalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+        cell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
     }
-    cell.textLabel.text = [NSString stringWithFormat: @"主标题 - %@",@(indexPath.row)];
-    cell.detailTextLabel.text = @"副标题";
+//    cell.textLabel.text = [NSString stringWithFormat: @"主标题 - %@",@(indexPath.row)];
+//    cell.detailTextLabel.text = @"副标题";
 //    cell.imageView.image = [UIImage imageNamed:@"”];
+    [cell layoutTableViewCell];
     return cell;
 }
 

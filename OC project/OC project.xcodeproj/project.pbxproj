@@ -17,6 +17,8 @@
 		D47CE1A125655D18009C3842 /* OC_projectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D47CE1A025655D18009C3842 /* OC_projectTests.m */; };
 		D47CE1AC25655D18009C3842 /* OC_projectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D47CE1AB25655D18009C3842 /* OC_projectUITests.m */; };
 		D47CE1BB25C0363C009C3842 /* GTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47CE1BA25C0363C009C3842 /* GTVideoViewController.m */; };
+		D47CE1BE25C159D2009C3842 /* GTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47CE1BD25C159D2009C3842 /* GTRecommendViewController.m */; };
+		D47CE1C125C16851009C3842 /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D47CE1C025C16851009C3842 /* GTNormalTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,10 @@
 		D47CE1AD25655D18009C3842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D47CE1B925C0363C009C3842 /* GTVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoViewController.h; sourceTree = "<group>"; };
 		D47CE1BA25C0363C009C3842 /* GTVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoViewController.m; sourceTree = "<group>"; };
+		D47CE1BC25C159D2009C3842 /* GTRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTRecommendViewController.h; sourceTree = "<group>"; };
+		D47CE1BD25C159D2009C3842 /* GTRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTRecommendViewController.m; sourceTree = "<group>"; };
+		D47CE1BF25C16851009C3842 /* GTNormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNormalTableViewCell.h; sourceTree = "<group>"; };
+		D47CE1C025C16851009C3842 /* GTNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNormalTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,10 @@
 				D47CE18B25655D17009C3842 /* ViewController.m */,
 				D47CE1B925C0363C009C3842 /* GTVideoViewController.h */,
 				D47CE1BA25C0363C009C3842 /* GTVideoViewController.m */,
+				D47CE1BC25C159D2009C3842 /* GTRecommendViewController.h */,
+				D47CE1BD25C159D2009C3842 /* GTRecommendViewController.m */,
+				D47CE1BF25C16851009C3842 /* GTNormalTableViewCell.h */,
+				D47CE1C025C16851009C3842 /* GTNormalTableViewCell.m */,
 				D47CE18D25655D17009C3842 /* Main.storyboard */,
 				D47CE19025655D18009C3842 /* Assets.xcassets */,
 				D47CE19225655D18009C3842 /* LaunchScreen.storyboard */,
@@ -272,8 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D47CE1C125C16851009C3842 /* GTNormalTableViewCell.m in Sources */,
 				D47CE18C25655D17009C3842 /* ViewController.m in Sources */,
 				D47CE1BB25C0363C009C3842 /* GTVideoViewController.m in Sources */,
+				D47CE1BE25C159D2009C3842 /* GTRecommendViewController.m in Sources */,
 				D47CE18625655D17009C3842 /* AppDelegate.m in Sources */,
 				D47CE19725655D18009C3842 /* main.m in Sources */,
 				D47CE18925655D17009C3842 /* SceneDelegate.m in Sources */,

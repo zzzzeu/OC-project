@@ -9,6 +9,7 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
 #import "GTVideoViewController.h"
+#import "GTRecommendViewController.h"
 
 @interface SceneDelegate ()<UITabBarControllerDelegate>
 
@@ -32,15 +33,13 @@
         
     GTVideoViewController *videoController = [[GTVideoViewController alloc] init];
         
-    UIViewController *controller3 = [[UIViewController alloc] init];
-    controller3.view.backgroundColor = [UIColor greenColor];
-    controller3.tabBarItem.title = @"推荐";
+    GTRecommendViewController *recommendController = [[GTRecommendViewController alloc] init];
         
     UIViewController *controller4 = [[UIViewController alloc] init];
     controller4.view.backgroundColor = [UIColor lightGrayColor];
     controller4.tabBarItem.title = @"我的";
         
-    [tabbarController setViewControllers:@[viewController,videoController,controller3,controller4]];
+    [tabbarController setViewControllers:@[viewController,videoController,recommendController,controller4]];
         
     tabbarController.delegate = self;
     
