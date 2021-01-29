@@ -7,7 +7,7 @@
 //
 
 #import "SceneDelegate.h"
-#import "ViewController.h"
+#import "GTNewsViewController.h"
 #import "GTVideoViewController.h"
 #import "GTRecommendViewController.h"
 
@@ -21,13 +21,13 @@
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
     UITabBarController *tabbarController = [[UITabBarController alloc] init];
         
-    ViewController *viewController = [[ViewController alloc] init];
+    GTNewsViewController *newsViewController = [[GTNewsViewController alloc] init];
         
     UINavigationController *navigationConroller = [[UINavigationController alloc] initWithRootViewController:tabbarController];
         
 //  UIViewController *controller1 = [[UIViewController alloc] init];
 //  controller1.view.backgroundColor = [UIColor redColor];
-    viewController.tabBarItem.title = @"新闻";
+    newsViewController.tabBarItem.title = @"新闻";
 //  controller.tabBarItem.image = [UIImage imageNamed:@""]
 //  controller.tabBarItem.selectedImage = [UIImage imageNamed:@""]
         
@@ -35,11 +35,11 @@
         
     GTRecommendViewController *recommendController = [[GTRecommendViewController alloc] init];
         
-    UIViewController *controller4 = [[UIViewController alloc] init];
-    controller4.view.backgroundColor = [UIColor lightGrayColor];
-    controller4.tabBarItem.title = @"我的";
+    UIViewController *mineViewController = [[UIViewController alloc] init];
+    mineViewController.view.backgroundColor = [UIColor lightGrayColor];
+    mineViewController.tabBarItem.title = @"我的";
         
-    [tabbarController setViewControllers:@[viewController,videoController,recommendController,controller4]];
+    [tabbarController setViewControllers:@[newsViewController,videoController,recommendController,mineViewController]];
         
     tabbarController.delegate = self;
     

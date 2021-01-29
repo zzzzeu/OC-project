@@ -6,8 +6,9 @@
 //  Copyright © 2020 zou. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GTNewsViewController.h"
 #import "GTNormalTableViewCell.h"
+#import "GTDeleteCellView.h"
 
 //@interface TestView: UIView
 //
@@ -41,15 +42,22 @@
 //
 //@end
 
-@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface GTNewsViewController ()<UITableViewDelegate, UITableViewDataSource, GTNormalTableViewCellDelegate>
+
+@property(nonatomic, strong, readwrite) UITableView *tableView;
+@property(nonatomic, strong, readwrite) NSMutableArray *dataArray;
 
 @end
 
-@implementation ViewController
+@implementation GTNewsViewController
 
 - (instancetype)init{
     self = [super init];
     if (self) {
+        _dataArray = @[].mutableCopy;
+        for (int i = 0; i < 20; i++) {
+            [_dataArray addObject:@(i)];
+        }
         
     }
     return self;
@@ -72,10 +80,10 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    [self.view addSubview:tableView];
+    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    [self.view addSubview:_tableView];
     
 //    TestView *view2 = [[TestView alloc] init];
 //    view2.backgroundColor = [UIColor greenColor];
@@ -98,7 +106,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    return _dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -106,6 +114,7 @@
     GTNormalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
     if (!cell) {
         cell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+        cell.delegate = self;
     }
 //    cell.textLabel.text = [NSString stringWithFormat: @"主标题 - %@",@(indexPath.row)];
 //    cell.detailTextLabel.text = @"副标题";
@@ -114,6 +123,19 @@
     return cell;
 }
 
+- (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton{
+    GTDeleteCellView *deleteView = [[GTDeleteCellView alloc] initWithFrame:self.view.bounds];
+    
+    CGRect rect = [tableViewCell convertRect:deleteButton.frame toView:nil];
+    
+    __weak typeof(self) wself = self;
+    [deleteView showDeleteViewFromPoint:rect.origin clickBlock:^{
+        __strong typeof(self)strongSelf = wself;
+        [strongSelf.dataArray removeLastObject];
+        [self.tableView deleteRowsAtIndexPaths:@[[self.tableView indexPathForCell: tableViewCell]] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+    }];
+}
 
 //- (void)pushController{
 //

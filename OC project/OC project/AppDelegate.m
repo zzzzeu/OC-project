@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "GTNewsViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +22,7 @@
 
     UITabBarController *tabbarController = [[UITabBarController alloc] init];
     
-    ViewController *viewController = [[ViewController alloc] init];
+    GTNewsViewController *viewController = [[GTNewsViewController alloc] init];
     
     UINavigationController *navigationConroller = [[UINavigationController alloc] initWithRootViewController:viewController];
     
